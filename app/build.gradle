@@ -1,0 +1,89 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "kotlin-kapt"
+    id "kotlin-parcelize"
+    id "dagger.hilt.android.plugin"
+    id "androidx.navigation.safeargs.kotlin"
+}
+
+android {
+    namespace 'com.myapplication'
+
+    compileSdk versions.sdk
+    buildToolsVersion versions.buildTools
+
+    defaultConfig {
+        applicationId "com.myapplication"
+        minSdk versions.minSdk
+        targetSdk versions.sdk
+        versionCode versions.appCode
+        versionName versions.appName
+        resConfigs 'en', 'port'
+    }
+
+    buildTypes {
+        release {
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+
+    buildFeatures {
+        dataBinding true
+    }
+
+}
+
+dependencies {
+    // Kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$versions.kotlin"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutines"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:$versions.coroutines"
+
+    // AndroidX
+    implementation "androidx.activity:activity-ktx:$versions.activity"
+    implementation "androidx.appcompat:appcompat:$versions.appCompat"
+    implementation "androidx.constraintlayout:constraintlayout:$versions.constraintLayout"
+    implementation "androidx.core:core-ktx:$versions.core"
+    implementation "androidx.fragment:fragment-ktx:$versions.fragment"
+    implementation "androidx.hilt:hilt-navigation-fragment:$versions.androidxHilt"
+    implementation "androidx.hilt:hilt-work:$versions.androidxHilt"
+    kapt "androidx.hilt:hilt-compiler:$versions.androidxHilt"
+    implementation "androidx.lifecycle:lifecycle-common:$versions.lifecycle"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$versions.lifecycle"
+    implementation "androidx.lifecycle:lifecycle-process:$versions.lifecycle"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$versions.lifecycle"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.lifecycle"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$versions.lifecycle"
+    implementation "androidx.navigation:navigation-fragment-ktx:$versions.navigation"
+    implementation "androidx.navigation:navigation-ui-ktx:$versions.navigation"
+    implementation "androidx.recyclerview:recyclerview:$versions.recyclerView"
+    implementation "androidx.paging:paging-runtime-ktx:$versions.paging"
+    implementation "androidx.preference:preference-ktx:$versions.preference"
+
+    // Google
+    implementation "com.google.android.material:material:$versions.material"
+    implementation "com.google.dagger:hilt-android:$versions.hilt"
+    kapt "com.google.dagger:hilt-compiler:$versions.hilt"
+
+    // third party
+    implementation "com.facebook.shimmer:shimmer:$versions.shimmer"
+    implementation "com.github.bumptech.glide:glide:$versions.glide"
+    kapt "com.github.bumptech.glide:compiler:$versions.glide"
+    implementation "com.squareup.moshi:moshi:$versions.moshi"
+    kapt "com.squareup.moshi:moshi-kotlin-codegen:$versions.moshi"
+    implementation "com.squareup.okhttp3:logging-interceptor:$versions.okHttp"
+    implementation "com.squareup.okhttp3:okhttp:$versions.okHttp"
+    implementation "com.squareup.okio:okio:$versions.okio"
+    implementation "com.squareup.retrofit2:converter-moshi:$versions.retrofit"
+    implementation "com.squareup.retrofit2:retrofit:$versions.retrofit"
+}

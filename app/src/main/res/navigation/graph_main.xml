@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/graph_main"
+    app:startDestination="@id/fragment_home">
+
+    <action
+        android:id="@+id/to_auth"
+        app:destination="@+id/graph_auth"
+        app:popUpTo="@id/graph_main" />
+
+    <fragment
+        android:id="@+id/fragment_home"
+        android:name="com.myapplication.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_fragment_image_details"
+            app:destination="@id/fragment_image_details" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_image_details"
+        android:name="com.myapplication.ui.home.ImageDetailsFragment"
+        android:label="@string/title_image_details"
+        tools:layout="@layout/fragment_image_details">
+
+        <argument
+            android:name="image"
+            app:argType="com.myapplication.models.Image" />
+
+    </fragment>
+
+    <include app:graph="@navigation/graph_auth" />
+
+</navigation>

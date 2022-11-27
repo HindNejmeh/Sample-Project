@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.home.ImageDetailsFragment">
+
+    <data>
+
+        <variable
+            name="imageDetails"
+            type="com.myapplication.models.Image" />
+
+    </data>
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_default">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="200dp"
+                android:scaleType="fitCenter"
+                app:imageUrl="@{imageDetails.largeImageURL}"
+                app:shapeAppearance="@style/Widget.App.MediumComponent"
+                tools:layout_height="200dp"
+                tools:src="@drawable/test_img" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/margin_default"
+                android:text='@{@string/text_size + imageDetails.imageSize}'
+                android:textSize="@dimen/sp_x_medium"
+                tools:text="Image Size : 45454" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text='@{@string/text_type + imageDetails.type}'
+                android:textSize="@dimen/sp_x_medium"
+                tools:text="type : Photo" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/margin_default"
+                android:text='@{@string/text_tags + imageDetails.tags}'
+                android:textSize="@dimen/sp_x_medium"
+                tools:text="tags : blossom, bloom, flower" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="@dimen/margin_default" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_default"
+                android:text="@{imageDetails.user}"
+                android:textSize="@dimen/sp_x_medium"
+                tools:text="Hind Nejmeh" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_default"
+                android:text='@{@string/text_amount_of_views + imageDetails.views}'
+                android:textSize="@dimen/sp_x_medium"
+                tools:text="Amount of views : 343" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_default"
+                android:text='@{@string/text_amount_of_likes + imageDetails.likes}'
+                android:textSize="@dimen/sp_x_medium"
+                tools:text="Amount of likes : 343" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_default"
+                android:text='@{@string/text_amount_of_comments + imageDetails.comments}'
+                android:textSize="@dimen/sp_x_medium"
+                tools:text="Amount of comments : 343" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_default"
+                android:text='@{@string/text_amount_of_favorites + "343"}'
+                android:textSize="@dimen/sp_x_medium"
+                android:visibility="gone"
+                tools:text="Amount of favorites  : 343" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_default"
+                android:text='@{@string/text_amount_of_downloads + imageDetails.downloads}'
+                android:textSize="@dimen/sp_x_medium"
+                tools:text="Amount of downloads : 343" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>

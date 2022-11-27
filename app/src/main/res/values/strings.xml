@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">My Application</string>
+
+    <string name="message_failure">An error has occurred. Please try again later</string>
+    <string name="message_field_required">This field is required</string>
+    <string name="message_success">Operation completed successfully</string>
+    <string name="message_unauthorized">Please log in to continue</string>
+    <string name="message_email_invalid">Entered email is invalid</string>
+    <string name="message_password_invalid">The length of password must be between 6 and 12 characters</string>
+    <string name="message_age_invalid">Sorry, The age must be limited between 18 and 99 years old</string>
+    <string name="message_internet_unavailable">Please check your internet connection</string>
+
+    <string name="title_home">Home</string>
+    <string name="title_image_details">Image Details</string>
+
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_age">Age</string>
+
+    <string name="label_login">Login</string>
+    <string name="label_register">Register</string>
+    <string name="label_retry">Retry</string>
+
+    <string name="text_not_a_member">Not a member?</string>
+    <string name="text_already_have_account">Already have account</string>
+    <string name="text_login">Login</string>
+    <string name="text_login_description">Please enter your email and password\nto login</string>
+    <string name="text_create_account">Create Account</string>
+    <string name="text_register_description">To create an account, please fill the following information</string>
+    <string name="text_placeholder_failure">An error has occurred</string>
+    <string name="text_size">Size : </string>
+    <string name="text_type">Type : </string>
+    <string name="text_tags">Tags : </string>
+    <string name="text_amount_of_views">Amount of views : </string>
+    <string name="text_amount_of_likes">Amount of likes : </string>
+    <string name="text_amount_of_comments">Amount of comments : </string>
+    <string name="text_amount_of_favorites">Amount of favorites : </string>
+    <string name="text_amount_of_downloads">Amount of downloads : </string>
+
+</resources>
